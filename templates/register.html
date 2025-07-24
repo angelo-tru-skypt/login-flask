@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+    <style>
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Mostrar mensajes flash -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <h2>Registro</h2>
+    <form method="post">
+        username: <input type="text" name="username" id="username" required><br>
+        Correo: <input type="email" name="email" id="email" required><br>
+        Contraseña: <input type="password" name="password" id="password" required><br>
+        <input type="submit" value="Registrar">
+    </form>
+    <a href="/login">¿Ya tienes una cuenta?</a>
+
+</body>
+</html>
