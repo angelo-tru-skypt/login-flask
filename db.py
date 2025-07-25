@@ -2,8 +2,8 @@ import pymysql
 
 connection = pymysql.connect(
     host='localhost',
-    user='root',
-    password='Amancebo0818',
+    user='your_user',
+    password='your_password',
     database='db'
 );
 
