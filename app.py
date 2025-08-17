@@ -5,7 +5,7 @@ from routes.register import register
 from routes.logout import logout
 from models.db import db
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:Amancebo0818@localhost:3306/login'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://your_user:your_password@localhost:3306/your_database'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
